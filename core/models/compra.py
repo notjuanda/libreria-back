@@ -14,7 +14,7 @@ class Compra(models.Model):
     comprobante_pago = models.ImageField(upload_to='comprobantes/', null=True, blank=True)
     qr = models.CharField(max_length=100)
     fecha = models.DateTimeField(auto_now_add=True)
-    estado = models.CharField(max_length=10, choices=ESTADOS, default='pendiente')
+    estado = models.CharField(max_length=10, choices=ESTADOS, default='confirmada')
 
     def __str__(self):
         return f"Compra #{self.id} - {self.usuario.username} - {self.estado}"
