@@ -11,6 +11,7 @@ class DetalleCompraSerializer(serializers.ModelSerializer):
         model = DetalleCompra
         fields = ['id', 'libro', 'libro_id', 'cantidad']
 
+
 class CompraSerializer(serializers.ModelSerializer):
     detalles = DetalleCompraSerializer(source='detallecompra_set', many=True)
     usuario = serializers.StringRelatedField(read_only=True)
